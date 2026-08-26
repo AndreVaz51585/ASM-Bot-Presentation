@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f6f6f3" />
+  <title>EY — Attack Surface Mapping Agent</title>
+  <link rel="stylesheet" href="./src/styles.css" />
+</head>
+<body>
+<div class="deck-viewport" aria-live="polite"><main class="deck-stage" id="deckStage">
+
+<!-- 01 — CAPA -->
+<section class="slide active visible cover" data-title="Attack Surface Mapping Agent" aria-label="Slide 1: Attack Surface Mapping Agent">
+  <div class="ey-lockup reveal"><img src="./assets/ey-logo.svg" alt="EY" /></div>
+  <div class="cover-copy"><p class="eyebrow reveal">SECURITY ENGINEERING · AGENTIC AI</p><h1 class="reveal">Attack Surface<br /><mark>Mapping Agent</mark></h1></div>
+  <div class="topology topology-sequence reveal" aria-hidden="true">
+    <svg viewBox="0 0 760 560" role="presentation">
+      <defs><marker id="topoArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z"/></marker></defs>
+      <g class="topology-lines">
+        <path d="M60 280H190" marker-end="url(#topoArrow)"/>
+        <path d="M205 280H245M245 112V485M245 112H285M245 205H310M245 380H300M245 485H270"/>
+        <path d="M285 112H420M310 205H420M300 380H420M270 485H420M420 112V485"/><path d="M420 280H455" marker-end="url(#topoArrow)"/>
+        <path d="M470 280H520M520 150V415M520 150H565M520 280H600M520 415H565"/>
+        <path d="M565 150H650M600 280H650M565 415H650M650 150V415"/><path d="M650 280H685" marker-end="url(#topoArrow)"/>
+      </g>
+      <g class="topology-pulse"><circle cx="60" cy="280" r="10"/><circle cx="205" cy="280" r="14"/><circle cx="285" cy="112" r="8"/><circle cx="310" cy="205" r="8"/><circle cx="300" cy="380" r="8"/><circle cx="270" cy="485" r="8"/><circle cx="470" cy="280" r="14"/><circle cx="565" cy="150" r="8"/><circle cx="600" cy="280" r="8"/><circle cx="565" cy="415" r="8"/><circle cx="685" cy="280" r="15"/></g>
+      <circle class="topology-scan" cx="205" cy="280" r="34"/><circle class="topology-scan second" cx="470" cy="280" r="34"/>
+    </svg>
+    <span class="topology-tag tag-entry">ENTRY</span><span class="topology-tag tag-discover">DISCOVER</span><span class="topology-tag tag-correlate">CORRELATE</span><span class="topology-tag tag-assess">ASSESS</span>
+  </div>
+  <div class="speaker reveal"><strong>André Vaz</strong><span>Consulting AI &amp; Data</span></div>
+</section>
+
+<!-- 02 — PROBLEMA -->
+<section class="slide" data-title="Problema e objetivos" aria-label="Slide 2: Problema e objetivos">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header"><span>01 · PROBLEMA E OBJETIVOS</span><h2>Transformar um domínio em conhecimento acionável sobre toda a superfície de ataque.</h2></header>
+  <div class="objective-layout build-root" data-builds="4">
+    <div class="objective-points build" data-build="0">
+      <div><em>01</em><p><b>Mapear a exposição externa</b><span>Ativos, subdomínios, endpoints e aplicações.</span></p></div>
+      <div><em>02</em><p><b>Detetar Shadow IT</b><span>Ativos descobertos, mas ainda não inventariados.</span></p></div>
+      <div><em>03</em><p><b>Relacionar tecnologia e risco</b><span>Frameworks, versões, misconfigurations e vulnerabilidades.</span></p></div>
+      <div class="assessment-objective"><em>04</em><p><b>Produzir um assessment</b><span>Consolidar evidência, risco e recomendações.</span></p></div>
+    </div>
+    <div class="surface-map build" data-build="1">
+      <svg viewBox="0 0 930 520" aria-hidden="true"><path d="M465 250L170 80M465 250L465 45M465 250L760 80M465 250L120 260M465 250L810 260M465 250L180 440M465 250L465 475M465 250L750 440"/></svg>
+      <div class="domain-core"><small>ALVO AUTORIZADO</small><strong>domínio.pt</strong></div>
+      <span class="asset a1">Subdomínios<small>Shadow IT</small></span><span class="asset a2">DNS<small>Resolução</small></span><span class="asset a3">Aplicações<small>Web · APIs</small></span><span class="asset a4">Endpoints<small>Paths · Forms</small></span><span class="asset a5">TLS<small>Transporte</small></span><span class="asset a6">Tecnologias<small>Produto · Versão</small></span><span class="asset a7">Configurações<small>Exposição</small></span><span class="asset a8">Vulnerabilidades<small>CVE · EPSS</small></span>
+    </div>
+    <div class="map-to-report build" data-build="2"><i>↓</i></div>
+    <div class="report-card objective-report build" data-build="3"><div class="report-fold"></div><small>ATTACK SURFACE</small><strong>ASSESSMENT</strong><i></i><i></i><i></i><span>evidência → risco → recomendação</span></div>
+  </div>
+</section>
+
+<!-- 03 — STACK -->
+<section class="slide stack-slide" data-title="Stack tecnológico" aria-label="Slide 3: Stack tecnológico">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header simple"><span>02 · STACK TECNOLÓGICO</span><h2>Stack tecnológico</h2></header>
+  <div class="stack-system build-root" data-builds="4">
+    <div class="stack-foundation build" data-build="0">
+      <article class="backend"><small>BACKEND</small><b>Python <i>+</i> FastAPI</b><span><em>DOCKER</em> API, validação e execução dos scans</span></article>
+      <article><small>FRONTEND</small><b>React <i>+</i> TypeScript</b><span><em>DOCKER</em> Interface e experiência de utilização</span></article>
+      <article><small>BASE DE DADOS</small><b>PostgreSQL</b><span><em>DOCKER</em> Ativos, evidências, findings e estado</span></article>
+    </div>
+    <div class="library-band build" data-build="1"><small>BIBLIOTECAS AGENTIC &amp; RESEARCH</small><b>LangGraph</b><i>+</i><b>Tavily</b><span>orquestração · subagentes · pesquisa estruturada</span></div>
+    <div class="tool-cloud build" data-build="2"><small>SECURITY TOOLING</small><div><span>OWASP Amass</span><span>DNSSpy</span><span>httpx</span><span>Playwright</span><span>WhatWeb</span><span>Katana</span><span>Nuclei</span><span>Nikto</span><span>Osmedeus</span><span>ffuf</span><span>Gobuster</span><span>Crawl4AI</span></div></div>
+    <div class="stack-caption build" data-build="3"><span>DESCOBRIR</span><i>→</i><span>ANALISAR</span><i>→</i><span>INVESTIGAR</span><i>→</i><b>PERSISTIR</b></div>
+  </div>
+</section>
+
+<!-- 04 — WORKFLOW INICIAL -->
+<section class="slide workflow-slide" data-title="Workflow inicial" aria-label="Slide 4: Workflow inicial">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header title-only"><span>03 · WORKFLOW INICIAL</span><h2>Scan Workflow</h2></header>
+  <div class="initial-architecture build-root" data-builds="5">
+    <section class="scan-workflow-shell">
+      <div class="scan-label">SCAN WORKFLOW · LANGGRAPH</div>
+      <div class="scan-row build" data-build="0"><div class="scan-node target"><b>domínio.pt</b><small>target</small></div><i>→</i><div class="scan-node"><b>Scope &amp;<br/>Validation</b><small>schema · autorização</small></div><i>→</i><div class="scan-node"><b>OWASP<br/>Amass</b><small>ativos · subdomínios</small></div><i>→</i><div class="scan-node"><b>DNS</b><small>resolução</small></div><i>→</i><div class="scan-node"><b>httpx + TLS</b><small>serviço · transporte</small></div><i>→</i><div class="scan-node fingerprint"><b>Fingerprinting</b><small>WhatWeb · versão</small></div></div>
+      <div class="scan-fork build" data-build="1">
+        <svg viewBox="0 0 720 190" aria-hidden="true"><path d="M690 0V34H200V62M690 34H520V62M200 130V157H360M520 130V157H360"/></svg>
+        <div class="branch cve"><b>CPE · CVE · EPSS</b><small>vulnerabilidades candidatas</small></div><div class="branch misconfig"><b>Misconfigurations</b><small>exposição observada</small></div>
+        <strong class="risk-node build" data-build="2">Correlação + Risk Assessment</strong>
+      </div>
+    </section>
+    <div class="agent-workflow-title build" data-build="3">AI AGENT WORKFLOW</div>
+    <section class="agent-workflow build" data-build="3">
+      <div class="bot" aria-hidden="true"><i></i><b>AI</b><span></span></div>
+      <div class="agent-node"><small>01</small><b>EXECUTAR</b><span>Scan Workflow</span></div><i>→</i>
+      <div class="agent-node"><small>02</small><b>GATHER CONTEXT</b><span>evidence.jsonl</span></div><i>→</i>
+      <div class="agent-report"><div class="report-fold"></div><small>03 · OUTPUT</small><b>GERAR REPORT</b><span>assessment baseado em evidência</span><i></i><i></i><i></i></div>
+    </section>
+    <p class="initial-limit build" data-build="4"><b>Primeiro limite:</b> pouca profundidade Web e demasiada execução sequencial.</p>
+  </div>
+</section>
+
+<!-- 05 — PLAYWRIGHT -->
+<section class="slide" data-title="Mais contexto Web" aria-label="Slide 5: Introdução do Playwright">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header"><span>04 · DESAFIO 1</span><h2>As respostas HTTP mostravam o serviço — mas não a aplicação que o utilizador realmente vê.</h2></header>
+  <div class="playwright-story build-root" data-builds="3">
+    <div class="limited-view build" data-build="0"><small>ANTES</small><h3>DNS + httpx + TLS</h3><div class="browser-wire"><div></div><span>status · headers · certificado</span><i></i><i></i><i></i></div><p>Visibilidade limitada à resposta e ao transporte.</p></div>
+    <div class="change-arrow build" data-build="1"><span>NOVA DECISÃO</span><b>→</b></div>
+    <div class="rendered-view build" data-build="1"><small>DEPOIS</small><h3>Playwright <em>→ DNS + httpx + TLS</em></h3><div class="dom-tree"><b>DOM RENDERIZADA</b><span>scripts</span><span>forms</span><span>SPA routes</span><span>auth surfaces</span><span>links</span></div><p>O browser acrescenta contexto dinâmico; as validações DNS, HTTP e TLS mantêm-se.</p></div>
+    <div class="gain-strip build" data-build="2"><span>MAIS CONTEXTO</span><i>→</i><span>MAIS EVIDÊNCIA</span><i>→</i><b>MELHOR FINGERPRINTING</b></div>
+  </div>
+</section>
+
+<!-- 06 — CPE/CVE -->
+<section class="slide research-slide" data-title="Investigação CPE e CVE" aria-label="Slide 6: Investigação CPE e CVE">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header compact"><span>05 · DESAFIO 2</span><h2>Resolver vulnerabilidades exigia primeiro resolver a identidade exata da tecnologia.</h2></header>
+  <div class="cve-research build-root" data-builds="5">
+    <div class="cpe-input build" data-build="0"><small>FINGERPRINTING</small><b>Microsoft IIS</b><strong>8.5</strong></div>
+    <div class="cpe-code build" data-build="0"><small>CPE 2.3</small><code>cpe:2.3:<mark>a</mark>:<mark>microsoft</mark>:<mark>internet_information_services</mark>:<mark>8.5</mark>:*:*:*:*:*:*:*</code><div><span>parte</span><span>vendor</span><span>produto</span><span>versão</span></div></div>
+    <div class="old-cve-path build" data-build="1"><span>catálogo hardcoded</span><i>→</i><span>múltiplas queries NVD</span><i>→</i><b>429 · rate limit</b></div>
+    <div class="research-agent build" data-build="2"><div class="prompt"><small>SYSTEM PROMPT</small><b>Technology + version</b><code>“Microsoft IIS 8.5 CVEs”</code></div><i>→</i><div class="agent-core"><div class="bot mini"><i></i><b>AI</b><span></span></div><strong>CVE Research<br/>Sub-agent</strong></div><i>→</i><div class="tool-call"><small>TOOL 01</small><b>Tavily Search</b><span>NIST · Vulners · fontes especializadas</span></div><i>→</i><div class="tool-call"><small>TOOL 02</small><b>Tavily Extract</b><span>chunks relevantes dos URLs</span></div><i>→</i><div class="reasoning"><small>REASONING</small><b>Validar e selecionar</b><span>CPE · CVE · CVSS · EPSS</span></div></div>
+    <p class="research-outcome build" data-build="3">Pesquisa estruturada, menos mapeamento manual e melhor validação de aplicabilidade.</p>
+    <div class="evidence-rule build" data-build="4">A pesquisa propõe. <b>A evidência decide.</b></div>
+  </div>
+</section>
+
+<!-- 07 — KATANA + TOOLS -->
+<section class="slide security-slide" data-title="Cobertura orientada à segurança" aria-label="Slide 7: Katana e AI Researcher">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header title-only"><span>06 · DESAFIO 3</span><h2>De crawling genérico a investigação de segurança.</h2></header>
+  <div class="katana-evolution build-root" data-builds="5">
+    <div class="crawler-before-mini build" data-build="0"><small>ANTES</small><b>Playwright</b><span>DOM · scripts · forms</span></div><i class="evolution-arrow build" data-build="1">→</i>
+    <div class="crawler-after-mini build" data-build="1"><small>DEPOIS</small><b>Katana</b><span>crawler security-native</span></div>
+    <div class="katana-benefits build" data-build="1"><span>ENDPOINTS</span><span>TECNOLOGIAS</span><span>FRAMEWORKS</span><span>KNOWN FILES</span></div>
+    <div class="subagent-workflow-title build" data-build="2">NEW SUB-AGENT WORKFLOW</div>
+    <section class="parallel-security build" data-build="2">
+      <div class="katana-trigger"><small>INPUT</small><b>Katana</b><span>URLs e superfície descoberta</span></div>
+      <svg viewBox="0 0 290 340" aria-hidden="true"><path d="M0 170H70M70 48V292M70 48H130M70 170H130M70 292H130"/></svg>
+      <div class="security-tool-list"><article><small>TEMPLATES</small><b>Nuclei</b><span>Deteta exposições e vulnerabilidades conhecidas.</span></article><article><small>WEB SERVER</small><b>Nikto</b><span>Analisa configurações e problemas do servidor Web.</span></article><article><small>WORKFLOWS</small><b>Osmedeus</b><span>Executa reconnaissance e workflows automatizados.</span></article></div>
+      <div class="fan-in-lines"><i></i><i></i><i></i></div>
+      <div class="ai-researcher"><div class="bot"><i></i><b>AI</b><span></span></div><p><small>SUB-AGENT</small><strong>AI Researcher</strong><span>Triar · correlacionar · explicar</span></p></div>
+      <i class="to-result">→</i><div class="research-result"><small>OUTPUT</small><b>Vulnerabilidade conhecida?</b><div><span class="yes">SIM · guardar com evidência</span><span>NÃO / INCERTO · não promover</span></div></div>
+    </section>
+    <div class="security-verdict build" data-build="4">MAIS COBERTURA <i>→</i> MENOS RUÍDO <i>→</i> <b>EVIDÊNCIA ÚTIL</b></div>
+  </div>
+</section>
+
+<!-- 08 — ENGENHARIA -->
+<section class="slide engineering-slide" data-title="Engenharia para escala" aria-label="Slide 8: Engenharia para escala">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header title-only"><span>07 · ENGENHARIA PARA ESCALA</span><h2>Concorrência, isolamento e persistência.</h2></header>
+  <div class="scale-system build-root" data-builds="4">
+    <section class="scan-queue build" data-build="0"><small>ASYNCIO · CONCORRÊNCIA CONTROLADA</small><div class="start-scan">START SCAN <b>▶</b></div><i>→</i><div class="queue"><b>SCAN QUEUE</b><span>scan_04</span><span>scan_05</span><span>scan_06</span><span>···</span></div><svg viewBox="0 0 160 330" aria-hidden="true"><path d="M0 165H65M65 55V275M65 55H150M65 165H150M65 275H150"/></svg><div class="scan-workers"><article><em>01</em><b>SCAN 1</b><span>running</span></article><article><em>02</em><b>SCAN 2</b><span>running</span></article><article><em>03</em><b>SCAN 3</b><span>running</span></article></div><p>Até três scans em simultâneo; os restantes aguardam na queue.</p></section>
+    <section class="docker-system build" data-build="1"><small>ISOLAMENTO</small><h3>Docker</h3><div><span>Amass</span><span>Katana</span><span>Nuclei</span><span>Nikto</span><span>Osmedeus</span></div><p>Cada ferramenta executa de forma isolada e reproduzível.</p></section>
+    <section class="postgres-system build" data-build="2"><small>PERSISTÊNCIA RELACIONAL</small><h3>PostgreSQL</h3><div class="db-agent"><div class="bot tiny"><i></i><b>AI</b><span></span></div><b>Agent</b><i>→</i><div class="db-tools"><span>get_nuclei_findings()</span><span>get_nikto_results()</span><span>get_osmedeus_evidence()</span></div><i>→</i><div class="database"><b>DB</b></div></div><p>O agente consulta a informação através de tools — em vez de receber todo o contexto num único ficheiro.</p></section>
+    <div class="scale-caption build" data-build="3"><span>QUEUE</span><i>→</i><span>3 WORKERS</span><i>→</i><span>TOOLS ISOLADAS</span><i>→</i><b>CONTEXTO SOB PEDIDO</b></div>
+  </div>
+</section>
+
+<!-- 09 — WORKFLOW FINAL -->
+<section class="slide final-workflow-slide" data-title="Workflow final" aria-label="Slide 9: Workflow final">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header graph-header"><span>08 · WORKFLOW FINAL</span><h2>Workflow final</h2></header>
+  <div class="final-graph-v2 build-root" data-builds="7">
+    <svg class="workflow-edges" viewBox="0 0 1736 835" aria-hidden="true">
+      <defs><marker id="wfArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z"/></marker></defs>
+      <g class="build" data-build="1"><path d="M205 95H258"/><path d="M480 95H545V55H598"/><path d="M545 95V190H598"/></g>
+      <g class="build" data-build="2"><path d="M805 55H868"/><path d="M805 190H850V122H903"/><path d="M850 190V164H903"/><path d="M850 190V206H903"/></g>
+      <g class="build" data-build="3"><path class="join-branch" d="M1085 122H1150M1085 164H1150M1085 206H1150M1090 55H1150M1150 55V206"/><path d="M1150 132H1218"/><path d="M1425 132H1470V33H1508"/><path d="M1470 132V76H1508"/><path d="M1470 132V119H1508"/></g>
+      <g class="build deep-return" data-build="4"><path class="join-branch" d="M1635 33H1690M1635 76H1690M1635 119H1690M1690 33V335"/><path d="M1690 335H1467"/><path d="M1238 335H1197"/></g>
+      <g class="build" data-build="5"><path d="M970 335H940V430H912"/><path d="M940 335V520H912"/><path d="M1185 335H1205V545H1100V563"/><path class="join-branch" d="M900 430H925M900 520H925M925 430V615"/><path d="M925 615H943"/></g>
+      <g class="build" data-build="6"><path d="M1160 615H1308"/></g>
+    </svg>
+    <div class="wf2-node domain build" data-build="0"><small>INPUT</small><b>domínio.pt</b></div><div class="wf2-node scope build" data-build="0"><small>CONTROL</small><b>Scope &amp; Validation</b></div>
+    <div class="wf2-node amass build" data-build="1"><small>AMPLITUDE</small><b>OWASP Amass</b></div><div class="wf2-node katana build" data-build="1"><small>PROFUNDIDADE</small><b>Katana</b></div>
+    <div class="wf2-node dns build" data-build="2"><small>VALIDAÇÃO</small><b>DNS · httpx · TLS</b></div><div class="wf2-tools scanners build" data-build="2"><span>Nuclei</span><span>Nikto</span><span>Osmedeus</span></div>
+    <div class="wf2-agent ai-main build" data-build="3"><div class="bot tiny"><i></i><b>AI</b><span></span></div><p><small>SUB-AGENT</small><b>AI Researcher</b></p></div>
+    <div class="wf2-tools deep-tools build" data-build="3"><span>ffuf</span><span>Gobuster</span><span>Crawl4AI</span></div>
+    <div class="wf2-agent surface-agent build" data-build="4"><div class="bot tiny"><i></i><b>AI</b><span></span></div><p><small>SUB-AGENT</small><b>Surface Research</b></p></div>
+    <div class="wf2-node fingerprint build" data-build="4"><small>CONVERGÊNCIA</small><b>Fingerprinting + WhatWeb</b><span>tecnologia · versão · evidência</span></div>
+    <div class="wf2-node cve build" data-build="5"><small>SE APLICÁVEL</small><b>CVE Research</b></div><div class="wf2-node misc build" data-build="5"><small>EXPOSIÇÃO</small><b>Misconfigurations</b></div><div class="wf2-bypass build" data-build="5">sem tecnologia/versão → ignorar CVE Research</div>
+    <div class="wf2-node risk build" data-build="6"><small>VALIDAÇÃO</small><b>Correlação + Risk Assessment</b></div>
+    <div class="wf2-report build" data-build="6"><div class="report-fold"></div><small>OUTPUT</small><b>ASSESSMENT</b><i></i><i></i><i></i></div>
+    <div class="persistence-rail build" data-build="6"><div class="database"><b>DB</b></div><p><b>Checkpoint a cada node</b></p></div>
+  </div>
+</section>
+
+<!-- 10 — DEMO -->
+<section class="slide demo-slide" data-title="Demonstração" aria-label="Slide 10: Demonstração">
+  <img class="slide-logo demo-logo" src="./assets/ey-logo-white.svg" alt="EY" />
+  <p class="eyebrow reveal">DEMONSTRAÇÃO</p><h2 class="reveal">Da superfície<br />ao <mark>assessment.</mark></h2>
+  <div class="demo-flow reveal"><span>SCOPE</span><i>→</i><span>DISCOVER</span><i>→</i><span>RESEARCH</span><i>→</i><span>VALIDATE</span><i>→</i><span>REPORT</span></div>
+  <div class="demo-speaker reveal"><strong>André Vaz</strong><span>Consulting AI &amp; Data</span></div>
+</section>
+
+<!-- 11 — CONCLUSÃO -->
+<section class="slide conclusion-slide" data-title="Conclusão e trabalho futuro" aria-label="Slide 11: Conclusão e trabalho futuro">
+  <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
+  <header class="slide-header"><span>09 · CONCLUSÃO</span><h2>Uma superfície fragmentada tornou-se um assessment explicável e persistente.</h2></header>
+  <div class="conclusion-system build-root" data-builds="3">
+    <section class="delivered build" data-build="0"><small>ENTREGUE</small><div><span>01</span><b>Descoberta ampla</b><p>Ativos, endpoints e Shadow IT.</p></div><div><span>02</span><b>Investigação agentic</b><p>Pesquisa e validação baseada em evidência.</p></div><div><span>03</span><b>Plataforma persistente</b><p>Workflows concorrentes e dados relacionais.</p></div></section>
+    <section class="future build" data-build="1"><small>TRABALHO FUTURO</small><div class="future-step"><em>01</em><p><b>Docker Compose</b><span>Containerizar e orquestrar todos os serviços.</span></p></div><i>→</i><div class="future-step yellow"><em>02</em><p><b>Deployment</b><span>Disponibilizar a plataforma num ambiente controlado.</span></p></div></section>
+    <p class="closing-statement build" data-build="2">Descobrir mais. <b>Validar melhor.</b> Comunicar com evidência.</p>
+  </div>
+  <div class="closing-name">André Vaz <span>· Consulting AI &amp; Data</span></div>
+</section>
+
+</main></div>
+<nav class="deck-controls" aria-label="Controlos da apresentação"><button id="prevButton" title="Anterior" aria-label="Slide anterior">←</button><span id="slideCounter">01 / 11</span><button id="nextButton" title="Seguinte" aria-label="Slide seguinte">→</button><button id="overviewButton" title="Visão geral (O)" aria-label="Visão geral">▦</button><button id="fullscreenButton" title="Ecrã inteiro (F)" aria-label="Ecrã inteiro">⛶</button></nav>
+<div class="progress-track" aria-hidden="true"><div id="progressBar"></div></div><div class="build-indicator" id="buildIndicator" aria-hidden="true"></div><aside class="overview" id="overview" aria-hidden="true"><div class="overview-grid" id="overviewGrid"></div></aside>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

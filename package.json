@@ -1,0 +1,15 @@
+{
+  "name": "ey-attack-surface-mapping-presentation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "start": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "8.2.2"
+  }
+}
