@@ -157,27 +157,41 @@
 <section class="slide final-workflow-slide" data-title="Workflow final" aria-label="Slide 9: Workflow final">
   <img class="slide-logo" src="./assets/ey-logo.svg" alt="" aria-hidden="true" />
   <header class="slide-header graph-header"><span>08 · WORKFLOW FINAL</span><h2>Workflow final</h2></header>
-  <div class="final-graph-v2 build-root" data-builds="7">
+  <div class="final-graph-v2 parallel-v3 build-root" data-builds="6">
     <svg class="workflow-edges" viewBox="0 0 1736 835" aria-hidden="true">
       <defs><marker id="wfArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z"/></marker></defs>
-      <g class="build" data-build="1"><path d="M205 95H258"/><path d="M480 95H545V55H598"/><path d="M545 95V190H598"/></g>
-      <g class="build" data-build="2"><path d="M805 55H868"/><path d="M805 190H850V122H903"/><path d="M850 190V164H903"/><path d="M850 190V206H903"/></g>
-      <g class="build" data-build="3"><path class="join-branch" d="M1085 122H1150M1085 164H1150M1085 206H1150M1090 55H1150M1150 55V206"/><path d="M1150 132H1218"/><path d="M1425 132H1470V33H1508"/><path d="M1470 132V76H1508"/><path d="M1470 132V119H1508"/></g>
-      <g class="build deep-return" data-build="4"><path class="join-branch" d="M1635 33H1690M1635 76H1690M1635 119H1690M1690 33V335"/><path d="M1690 335H1467"/><path d="M1238 335H1197"/></g>
-      <g class="build" data-build="5"><path d="M970 335H940V430H912"/><path d="M940 335V520H912"/><path d="M1185 335H1205V545H1100V563"/><path class="join-branch" d="M900 430H925M900 520H925M925 430V615"/><path d="M925 615H943"/></g>
-      <g class="build" data-build="6"><path d="M1160 615H1308"/></g>
+      <g class="build" data-build="0"><path d="M185 95H203"/></g>
+      <g class="build" data-build="1">
+        <path class="join-branch" d="M395 95H430M430 55V540"/>
+        <path d="M430 55H468"/><path d="M430 155H468"/><path d="M430 263H468"/><path d="M430 408H468"/><path d="M430 540H468"/>
+      </g>
+      <g class="build" data-build="2">
+        <path d="M650 55H668"/>
+        <path class="join-branch" d="M650 155H760M650 222H760M650 264H760M650 306H760M760 155V306"/><path d="M760 220H808"/>
+        <path class="join-branch" d="M650 367H760M650 409H760M650 451H760M760 367V451"/><path d="M760 408H808"/>
+      </g>
+      <g class="build analysis-convergence" data-build="3">
+        <path class="join-branch" d="M860 55H1080M1010 220H1080M1010 408H1080M670 540H1080M1080 55V540"/><path d="M1080 315H1108"/>
+      </g>
+      <g class="build" data-build="4"><path class="join-branch" d="M1235 360V400M1180 400H1385"/><path d="M1180 400V418"/><path d="M1385 400V418"/></g>
+      <g class="build" data-build="5">
+        <path class="join-branch" d="M1180 500V545H1425M1385 500V545"/><path d="M1425 545V558"/>
+        <path d="M1350 315H1510V558"/><path d="M1530 610H1543"/>
+      </g>
     </svg>
     <div class="wf2-node domain build" data-build="0"><small>INPUT</small><b>domínio.pt</b></div><div class="wf2-node scope build" data-build="0"><small>CONTROL</small><b>Scope &amp; Validation</b></div>
     <div class="wf2-node amass build" data-build="1"><small>AMPLITUDE</small><b>OWASP Amass</b></div><div class="wf2-node katana build" data-build="1"><small>PROFUNDIDADE</small><b>Katana</b></div>
-    <div class="wf2-node dns build" data-build="2"><small>VALIDAÇÃO</small><b>DNS · httpx · TLS</b></div><div class="wf2-tools scanners build" data-build="2"><span>Nuclei</span><span>Nikto</span><span>Osmedeus</span></div>
-    <div class="wf2-agent ai-main build" data-build="3"><div class="bot tiny"><i></i><b>AI</b><span></span></div><p><small>SUB-AGENT</small><b>AI Researcher</b></p></div>
-    <div class="wf2-tools deep-tools build" data-build="3"><span>ffuf</span><span>Gobuster</span><span>Crawl4AI</span></div>
-    <div class="wf2-agent surface-agent build" data-build="4"><div class="bot tiny"><i></i><b>AI</b><span></span></div><p><small>SUB-AGENT</small><b>Surface Research</b></p></div>
-    <div class="wf2-node fingerprint build" data-build="4"><small>CONVERGÊNCIA</small><b>Fingerprinting + WhatWeb</b><span>tecnologia · versão · evidência</span></div>
-    <div class="wf2-node cve build" data-build="5"><small>SE APLICÁVEL</small><b>CVE Research</b></div><div class="wf2-node misc build" data-build="5"><small>EXPOSIÇÃO</small><b>Misconfigurations</b></div><div class="wf2-bypass build" data-build="5">sem tecnologia/versão → ignorar CVE Research</div>
-    <div class="wf2-node risk build" data-build="6"><small>VALIDAÇÃO</small><b>Correlação + Risk Assessment</b></div>
-    <div class="wf2-report build" data-build="6"><div class="report-fold"></div><small>OUTPUT</small><b>ASSESSMENT</b><i></i><i></i><i></i></div>
-    <div class="persistence-rail build" data-build="6"><div class="database"><b>DB</b></div><p><b>Checkpoint a cada node</b></p></div>
+    <div class="wf2-tools scanners build" data-build="1"><span>Nuclei</span><span>Nikto</span><span>Osmedeus</span></div>
+    <div class="wf2-tools deep-tools build" data-build="1"><span>ffuf</span><span>Gobuster</span><span>Crawl4AI</span></div>
+    <div class="wf2-agent chatbot-tester build" data-build="1"><div class="bot tiny"><i></i><b>QA</b><span></span></div><p><small>PARALLEL BRANCH</small><b>Chatbot Tester</b><span>Playwright · payloads</span></p></div>
+    <div class="wf2-node dns build" data-build="2"><small>VALIDAÇÃO</small><b>DNS · httpx · TLS</b></div>
+    <div class="wf2-agent ai-main build" data-build="2"><div class="bot tiny"><i></i><b>AI</b><span></span></div><p><small>SUB-AGENT</small><b>AI Researcher</b><span>Katana · scanners</span></p></div>
+    <div class="wf2-agent surface-agent build" data-build="2"><div class="bot tiny"><i></i><b>AI</b><span></span></div><p><small>SUB-AGENT</small><b>Surface Research</b><span>ffuf · Gobuster · Crawl4AI</span></p></div>
+    <div class="wf2-node fingerprint build" data-build="3"><small>CONVERGÊNCIA</small><b>Fingerprinting + WhatWeb</b><span>todas as análises · tecnologia · versão</span></div>
+    <div class="wf2-node cve build" data-build="4"><small>SE APLICÁVEL</small><b>CVE Research</b></div><div class="wf2-node misc build" data-build="4"><small>EXPOSIÇÃO</small><b>Misconfigurations</b></div><div class="wf2-bypass build" data-build="4">sem tecnologia/versão → ignorar CVE Research</div>
+    <div class="wf2-node risk build" data-build="5"><small>VALIDAÇÃO</small><b>Correlação + Risk Assessment</b></div>
+    <div class="wf2-report build" data-build="5"><div class="report-fold"></div><small>OUTPUT</small><b>ASSESSMENT</b><i></i><i></i><i></i></div>
+    <div class="persistence-rail build" data-build="5"><div class="database"><b>DB</b></div><p><b>Checkpoint a cada node</b></p></div>
   </div>
 </section>
 
